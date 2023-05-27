@@ -1,0 +1,45 @@
+﻿<Page x:Name="PageRegistration"
+    x:Class="AutoRent_Presentation.Views.Registration"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800" Unloaded="PageRegistration_Unloaded">
+
+    <Grid Height="800">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                <GradientStop Color="#FFFADCAB" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <NavigationView Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,0,0,753" ItemInvoked="NavigationView_ItemInvoked" BorderBrush="Black">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Contact" Content="MY ACCOUNT" x:Name="personalAccount" FontSize="24" />
+            </NavigationView.MenuItems>
+        </NavigationView>
+        <Rectangle HorizontalAlignment="Center" Height="708" Margin="0,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="1060" Fill="White"/>
+
+        <Button x:Name="ButtonSignUp" Content="Create an account" Margin="0,647,0,0" VerticalAlignment="Top" Background="#FFF4AA3E" Height="67" Width="428" FontSize="36" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Click="ButtonSignUp_ClickAsync"/>
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Right" Margin="0,191,290,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="527" Height="49" FontSize="25"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" Text="Sign Up" VerticalAlignment="Top" FontSize="72" FontWeight="Bold" Height="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,191,0,0" TextWrapping="Wrap" Text="Full name" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,341,0,0" TextWrapping="Wrap" Text="Telephone number" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,491,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,416,0,0" TextWrapping="Wrap" Text="Date of birth" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,266,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontSize="36" Width="88"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,566,0,0" TextWrapping="Wrap" Text="Password confirmation" VerticalAlignment="Top" FontSize="36"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Right" Margin="0,266,290,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="527" Height="50" FontSize="25"/>
+        <TextBox x:Name="TextBoxTelephone" HorizontalAlignment="Right" Margin="0,341,290,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="527" Height="50" FontSize="25"/>
+        <PasswordBox x:Name="PasswordBoxRepeatPassword" HorizontalAlignment="Right" Margin="0,566,290,0" VerticalAlignment="Top" Width="527" Height="50" FontSize="25"/>
+        <CalendarDatePicker x:Name="CalendarBirth" Margin="0,416,290,0" VerticalAlignment="Top" Width="527" Height="46" FontSize="25" HorizontalAlignment="Right"/>
+        <PasswordBox x:Name="PasswordBoxPassword" HorizontalAlignment="Right" Margin="0,491,290,0" VerticalAlignment="Top" Width="527" Height="50" FontSize="25"/>
+
+    </Grid>
+</Page>

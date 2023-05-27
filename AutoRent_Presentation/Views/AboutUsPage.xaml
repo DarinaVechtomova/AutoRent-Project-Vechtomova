@@ -1,0 +1,46 @@
+﻿<Page x:Name="PageAboutUs"
+    x:Class="AutoRent_Presentation.Views.AboutUsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                <GradientStop Color="#FFFADCAB" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <NavigationView x:Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,0,0,758" ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Contact" Content="MY ACCOUNT" x:Name="personalAccount" FontSize="24" />
+            </NavigationView.MenuItems>
+        </NavigationView>
+        <Rectangle Height="675" Margin="0,78,0,0" Stroke="Black" VerticalAlignment="Top" Fill="White" HorizontalAlignment="Center" Width="1400"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="329" Width="1365" FontSize="22"><Run Text="Small car rental company is a young and ambitious team of professionals that offers reliable and quality car rental service. Our company is founded to help customers solve their transportation needs by providing affordable and quality car rental."/><LineBreak/><Run/><LineBreak/><Run Text="We work only with the best car manufacturers, so our fleet consists of new, reliable and comfortable cars of different classes. We strive to provide maximum comfort and safety for our customers, so we regularly maintain our cars and monitor their condition."/><LineBreak/><Run/><LineBreak/><Run Text="Our team is made up of professionals who care for each client. We are always ready to help you with the selection of the car, the design of documents and answer all questions you are interested in."/><LineBreak/><Run/><LineBreak/><Run Text="We strive to provide our customers with quality and affordable car rental service so that everyone can move freely and safely in all circumstances. "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="123,526,0,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="123,104,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+        <TextBlock Margin="83,569,647,195">           
+            <Run Text="&#128205;" FontFamily="Segoe UI Symbol" Foreground="#FFFD692D" FontSize="22"/>
+            <Run Text=" Str. Orlovskaya, 21, Dnipro, Dnepropetrovsk region" FontSize="22"/>
+        </TextBlock>
+        <TextBlock Margin="83,603,971,158">           
+            <Run Text="&#x2709;" FontFamily="Segoe UI Symbol" Foreground="#FFFD692D" FontSize="22"/>
+            <Run Text=" d.v.vechtomova@student.khai.edu" FontSize="22"/>
+        </TextBlock>
+        <TextBlock Margin="83,632,971,129">           
+            <Run Text="&#128340;" FontFamily="Segoe UI Symbol" Foreground="#FFFD692D" FontSize="22"/>
+            <Run Text=" Mon - Sun: 8:00 - 20:00" FontSize="22"/>
+        </TextBlock>
+        
+    </Grid>
+</Page>

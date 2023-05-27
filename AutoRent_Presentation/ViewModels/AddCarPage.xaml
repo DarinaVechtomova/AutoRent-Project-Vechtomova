@@ -1,0 +1,61 @@
+﻿<Page x:Name="AddPage"
+    x:Class="AutoRent_Presentation.ViewModels.AddCarPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800" Unloaded="AddPage_Unloaded">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                <GradientStop Color="#FFFADCAB" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <NavigationView x:Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,0,0,756" ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                <NavigationViewItem Tag ="add" Content="ADD CAR" x:Name="addItem" FontSize="24" />
+                <NavigationViewItem Tag ="waiting" Content="WAITING FOR CONFIRMATION" x:Name="waiting" FontSize="24" />
+                <NavigationViewItem Tag ="orders" Content="ORDERS" x:Name="orders" FontSize="24" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="EXIT" x:Name="Exit" FontSize="24" />
+            </NavigationView.MenuItems>
+        </NavigationView>
+        <Button x:Name="ButtonSave" Content="Save" Margin="0,694,0,0" VerticalAlignment="Top" Background="#FFF4AA3E" Height="67" Width="296" FontSize="36" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Click="ButtonSave_Click"/>
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Margin="433,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="391" Height="49" FontSize="24" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,129,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,199,0,0" TextWrapping="Wrap" Text="Engine" VerticalAlignment="Top" FontSize="35" Width="152"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,409,0,0" TextWrapping="Wrap" Text="Fuel consumption" VerticalAlignment="Top" FontSize="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,269,0,0" TextWrapping="Wrap" Text="Transmission type" VerticalAlignment="Top" FontSize="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,339,0,0" TextWrapping="Wrap" Text="Fuel type" VerticalAlignment="Top" FontSize="35" Width="167"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,549,0,0" TextWrapping="Wrap" Text="Rental price" VerticalAlignment="Top" FontSize="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,619,0,0" TextWrapping="Wrap" Text="Pledge" VerticalAlignment="Top" FontSize="35"/>
+        <TextBlock x:Name="TextBlockTruck_Passenger" HorizontalAlignment="Left" Margin="77,479,0,0" TextWrapping="Wrap" Text="Number of passengers" VerticalAlignment="Top" FontSize="35"/>
+        <TextBox x:Name="TextBoxEngine" HorizontalAlignment="Left" Margin="433,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="391" Height="49" FontSize="24" Background="White"/>
+        <RadioButton x:Name="RadioButtonTruck" Content="Truck" Margin="89,61,0,0" VerticalAlignment="Top" FontSize="35" Width="145" Checked="RadioButtonTruck_Checked"/>
+        <RadioButton x:Name="RadioButtonPassengerCar" Content="Passenger Car" Margin="308,61,0,0" VerticalAlignment="Top" FontSize="35" VerticalContentAlignment="Top" Checked="RadioButtonPassengerCar_Checked" IsChecked="False"/>
+        <ComboBox x:Name="ComboBoxFuel" Margin="433,339,0,0" Width="391" Height="49" FontSize="24" Background="White" PlaceholderText="Choose fuel type">
+            <ComboBoxItem Content="Petrol" />
+            <ComboBoxItem Content="Diesel" />
+            <ComboBoxItem Content="Gas" />
+            <ComboBoxItem Content="Electricity" />
+            <ComboBoxItem Content="Hybrid" />
+        </ComboBox>
+        <ComboBox x:Name="ComboBoxTransmission" Margin="433,269,0,0" Width="391" Height="49" FontSize="24" Background="White" PlaceholderText="Choose transmission type">
+            <ComboBoxItem Content="Automatic" />
+            <ComboBoxItem Content="Manual" />
+            <ComboBoxItem Content="Automated_Manual" />
+        </ComboBox>
+        <TextBox x:Name="TextBoxPledge" HorizontalAlignment="Left" Margin="433,619,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="391" Height="49" FontSize="24" Background="White" IsReadOnly="True"/>
+        <TextBox x:Name="TextBoxPrice" HorizontalAlignment="Left" Margin="433,549,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="391" Height="49" FontSize="24" Background="White"/>
+        <TextBox x:Name="TextBoxVolume_People" HorizontalAlignment="Left" Margin="433,479,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="391" Height="49" FontSize="24" Background="White"/>
+        <TextBox x:Name="TextBoxConsumption" HorizontalAlignment="Left" Margin="433,409,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="391" Height="49" FontSize="24" Background="White"/>
+        <Image x:Name="ImageCar" HorizontalAlignment="Left" Height="350" Margin="904,153,0,0" VerticalAlignment="Top" Width="462"/>
+        <Button x:Name="ButtonPhoto" Content="Add photo" Margin="1062,524,0,0" VerticalAlignment="Top" Background="#FFF4AA3E" Height="48" Width="172" FontSize="24" BorderBrush="Black" BorderThickness="2" Click="ButtonPhoto_Click"/>
+    </Grid>
+</Page>

@@ -1,0 +1,40 @@
+﻿<Page x:Name="PageLogIn"
+    x:Class="AutoRent_Presentation.Views.LogIn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="797">
+
+    <Grid Height="800">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                <GradientStop Color="#FFFADCAB" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle x:Name="Rectangle" Height="648" Margin="0,74,0,0" Stroke="Black" VerticalAlignment="Top" Fill="White" HorizontalAlignment="Center" Width="852"/>
+
+        <NavigationView x:Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,0,0,753" ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Contact" Content="MY ACCOUNT" x:Name="personalAccount" FontSize="24" />
+            </NavigationView.MenuItems>
+        </NavigationView>
+
+        <Button x:Name="ButtonSignIn" Content="Sign in" Margin="0,549,0,0" VerticalAlignment="Top" Background="#FFF4AA3E" Height="67" Width="461" FontSize="36" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Click="ButtonSignIn_ClickAsync"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,96,0,0" TextWrapping="Wrap" Text="Sign in" VerticalAlignment="Top" FontSize="72" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="466,368,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="466,203,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontSize="36" Width="88"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Center" Margin="0,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="598" Height="50" FontSize="25"/>
+        <PasswordBox x:Name="PasswordBoxPassword" HorizontalAlignment="Center" VerticalAlignment="Top" Width="597" Height="50" FontSize="25" Margin="0,439,0,0" />
+        <Button x:Name="ButtonSignUp" Content="Don’t have an account? Sign up" Margin="0,619,0,0" VerticalAlignment="Top" Background="#33FFFFFF" Height="51" Width="397" FontSize="24" HorizontalAlignment="Center" Click="ButtonLogOn_Click"/>
+
+
+    </Grid>
+</Page>

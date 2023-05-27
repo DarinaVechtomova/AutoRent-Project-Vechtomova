@@ -1,0 +1,64 @@
+﻿<Page x:Name="myPage"
+    x:Class="AutoRent_Presentation.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="myPage_Loaded" Height="800">
+
+
+    <Grid Height="800">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                <GradientStop Color="#FFFADCAB" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <NavigationView Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,0,0,759" ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Contact" Content="MY ACCOUNT" x:Name="personalAccount" FontSize="24" />
+            </NavigationView.MenuItems>
+        </NavigationView>
+
+        <ListView x:Name="ListViewCars" Background="White" Margin="0,63,0,0" HorizontalAlignment="Center" Width="1432" Height="727" VerticalAlignment="Top">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding Img}" Height="208" Width="370" Margin="10,20"/>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10,20" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding VehicleName}" FontSize="24" FontWeight="Bold"/>
+                            <TextBlock FontSize="20">
+                        <Run Text="Price" FontWeight="Bold" />                           
+                        <Run Text=" " />
+                        <Run Text="{Binding RentalPrice}" Foreground="#FF292828" />
+                        <Run Text="$" />
+                            </TextBlock>
+                            <TextBlock FontSize="20">
+                        <Run Text="Deposit" FontWeight="Bold" />                           
+                        <Run Text=" " />
+                        <Run Text="{Binding Pledge}" Foreground="#FF292828" />
+                        <Run Text="$" />
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Orientation="Vertical" Margin="10,20" VerticalAlignment="Center">
+                            <Button Content="More details" Width="200" Height="50" Name="ButtonInfo" Click="ButtonInfo_Click" Background="#FFF4AA3E" FontSize="25" BorderBrush="Black" BorderThickness="2" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

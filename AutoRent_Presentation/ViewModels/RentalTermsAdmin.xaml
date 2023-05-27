@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="AutoRent_Presentation.ViewModels.RentalTermsAdmin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                <GradientStop Color="#FFFADCAB" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <NavigationView x:Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,-1,0,755" ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                <NavigationViewItem Tag ="add" Content="ADD CAR" x:Name="addItem" FontSize="24" />
+                <NavigationViewItem Tag ="waiting" Content="WAITING FOR CONFIRMATION" x:Name="waiting" FontSize="24" />
+                <NavigationViewItem Tag ="orders" Content="ORDERS" x:Name="orders" FontSize="24" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="EXIT" x:Name="Exit" FontSize="24" />
+            </NavigationView.MenuItems>
+
+        </NavigationView>
+        <Rectangle Height="675" Margin="0,78,0,0" Stroke="Black" VerticalAlignment="Top" Fill="White" HorizontalAlignment="Center" Width="1400"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="569" Width="1365" FontSize="22"><Run Text="    You can pay for acar rental with cash or a credit card. The service is available to drivers whose driving experience is already 2 years or more.  A name bank card can be provided as an additional document. Rent is possible only for people who have reached full age.  "/><LineBreak/><Run Text="    Car rental regulations require the following documents: "/><LineBreak/><Run Text="      - an ID;"/><LineBreak/><Run Text="      - driver’s license; "/><LineBreak/><Run Text="      - taxpayer identification number; "/><LineBreak/><Run Text="      - additional documents."/><LineBreak/><Run/><LineBreak/><Run Text="   "/><Run Text="The client must complete and sign the car rental agreement before receiving the keys. "/><LineBreak/><Run Text="   "/><Run Text="The client must return the car in the same condition as it was received."/><LineBreak/><Run Text="   "/><Run Text="The Client is obliged to notify the Company about damage to the car that occurred during the rental and to report any problems with the car."/><LineBreak/><Run Text="   "/><Run Text="The customer is obliged to return the car within the agreed time, according to the contract. An additional fee may be charged for the overdue rent."/><LineBreak/><Run Text="   "/><Run Text="The Company reserves the right to refuse a vehicle if it considers that the customer does not have sufficient driving experience or other requirements."/><LineBreak/><Run Text="   "/><Run Text="The Company is not responsible for any damage or loss that occurred during the lease, including those resulting from traffic violations."/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="123,104,0,0" TextWrapping="Wrap" Text="Car Rental Details" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+
+    </Grid>
+</Page>

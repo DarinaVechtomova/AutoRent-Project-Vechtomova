@@ -1,0 +1,148 @@
+﻿<Page
+    x:Class="AutoRent_Presentation.Views.TruckAutoInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800">
+
+        <Grid Height="800">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF6E3CD" Offset="1"/>
+                    <GradientStop Color="#FFFADCAB" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Rectangle Margin="70,511,0,0" Stroke="Black" Fill="White" Height="245" VerticalAlignment="Top" HorizontalAlignment="Left" Width="847"/>
+            <NavigationView x:Name="NavigationView" IsSettingsVisible="False" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" Margin="0,0,0,758" ItemInvoked="NavigationView_ItemInvoked">
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Tag ="home" Icon="Home" Content="HOME" x:Name="home" FontSize="24" />
+                    <NavigationViewItem Tag ="rentalRerms" Content="RENTAL TERMS" x:Name="rentalTerms" FontSize="24" />
+                    <NavigationViewItem Tag ="aboutUs" Content="ABOUT US" x:Name="aboutUs" FontSize="24" />
+                    <NavigationViewItem Tag ="reviews" Content="REVIEWS" x:Name="reviews" FontSize="24" />
+                    <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Contact" Content="MY ACCOUNT" x:Name="personalAccount" FontSize="24" />
+            </NavigationView.MenuItems>
+            </NavigationView>
+
+            <Grid x:Name="GridPrice" Margin="385,583,714,116">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Price per day" FontSize="24" />
+                <Border Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Deposit" FontSize="24" />
+            <ItemsControl Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" ItemsSource="{x:Bind slctdTruck}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" FontSize="24">
+                        <Run Text="{Binding RentalPrice}"/>                           
+                        <Run Text="$" />
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" FontSize="24">
+                        <Run Text="{Binding Pledge}"/>                           
+                        <Run Text="$" />
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+
+            <Rectangle Margin="0,77,0,0" Stroke="Black" Fill="White" Height="389" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1360"/>
+
+            <Grid x:Name="GridInfo" Margin="779,160,185,387" BorderBrush="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="350" />
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <Border Grid.Row="0" Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="#FF444242"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Engine" FontSize="24" />
+                <Border Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <Border Grid.Row="1" Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="#FF444242"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Transmission type" FontSize="24" />
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <Border Grid.Row="2" Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="#FF444242"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Fuel type" FontSize="24" />
+                <Border Grid.Row="3" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <Border Grid.Row="3" Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="#FF444242"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Average fuel consumption" FontSize="24" />
+                <Border Grid.Row="4" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#FF444242"/>
+                <Border Grid.Row="4" Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="#FF444242"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Cargo item volume" FontSize="24" />
+            <ItemsControl Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{x:Bind slctdTruck}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="{Binding Engine}" FontSize="24" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Row="1" Text="{Binding TransmissionType}" FontSize="24" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Row="2" Text="{Binding FuelType}" FontSize="24" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Row="3" FontSize="24" HorizontalAlignment="Center">
+                        <Run Text="{Binding FuelConsumption}"/>                           
+                        <Run Text="l / 100km" />
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" FontSize="24" HorizontalAlignment="Center">
+                        <Run Text="{Binding CargoItemVolume}"/>                           
+                        <Run Text=" people" />
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <Button x:Name="ButtonOrder" Content="Order a car" Margin="1027,607,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Background="#FFFF8500" Height="51" Width="302" BorderBrush="#FF040404" Click="ButtonOrder_Click"/>
+            <Grid x:Name="GridPhotoName" Margin="111,91,780,352">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <ItemsControl Grid.Row="0" Grid.Column="0" Grid.RowSpan = "2"  ItemsSource="{x:Bind slctdTruck}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="{Binding VehicleName}" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+                                <Image Grid.Row="1" HorizontalAlignment="Left" Height="276" VerticalAlignment="Top" Width="501" Source="{Binding Img}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <TextBlock  Text="Characteristics" Margin="783,109,311,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Height="41"/>
+            <TextBlock  Text="Rental price" Margin="128,609,1118,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Height="41"/>
+
+        </Grid>
+</Page>
